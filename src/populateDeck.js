@@ -1,9 +1,13 @@
 import getRandomInt from "./getRandomInt";
 
 export default function populateDeck(size) {
-  const array = [];
-  for (let n = 0; n < size; n++) {
-    array.push(getRandomInt());
+  const deck = [];
+
+  while (deck.length < size) {
+    let number = getRandomInt();
+    if (!deck.includes(number)) {
+      deck.push(number);
+    }
   }
-  return array;
+  return deck;
 }

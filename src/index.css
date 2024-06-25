@@ -2,7 +2,40 @@
   font-size: 50px;
 }
 
-img {
-  width: 300px;
-  height: 300px;
+#root {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+
+  /* width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal; */
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* height: 300px;
+  width: 300px; */
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+}
+
+.card p {
+  margin: 0;
 }

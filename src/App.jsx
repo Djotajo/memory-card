@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
-import DisplayImage from "./displayImage";
 import populateDeck from "./populateDeck";
-import DisplayCards from "./displayCards";
+import DisplayDeck from "./displayDeck";
 
 function App() {
   const [currentScore, setCurrentScore] = useState(0);
@@ -23,7 +22,9 @@ function App() {
     <>
       <p>{currentScore}</p>
       <p>{highscore}</p>
-      <DisplayCards array={currentDeck} />
+      <div className="cards">
+        <DisplayDeck array={currentDeck} />
+      </div>
     </>
   );
 }
