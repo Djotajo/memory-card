@@ -1,29 +1,29 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DisplayImage from "./displayImage";
+import populateDeck from "./populateDeck";
+import DisplayCards from "./displayCards";
 
 function App() {
   const [currentScore, setCurrentScore] = useState(0);
   const [highscore, setHighscore] = useState(0);
+  const [deckSize, setDeckSize] = useState(15);
+  const [currentDeck, setCurrentDeck] = useState(null);
   const [prevCards, setPrevCards] = useState([]);
-  // const [name, setName] = useState("");
+  console.log(currentDeck);
 
-  // async function getData(pokemon) {
-  //   const response = await fetch(
-  //     `https://pokeapi.co/api/v2/pokemon/${pokemon}`
-  //   );
-  //   const responseJson = await response.json();
-  //   setName(JSON.stringify(responseJson.sprites.front_default));
-  //   return responseJson;
-  // }
+  useEffect(() => {
+    function maintainDeck() {
+      setCurrentDeck(populateDeck(deckSize));
+    }
+
+    maintainDeck();
+  }, [deckSize]);
 
   return (
     <>
       <p>{currentScore}</p>
       <p>{highscore}</p>
-      {/* <p>{name}</p> */}
-      {/* <p>{JSON.stringify(getData("ditto"))}</p> */}
-      <DisplayImage pokeName="ditto" />
-      <div>test</div>
+      <DisplayCards array={currentDeck} />
     </>
   );
 }

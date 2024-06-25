@@ -9,7 +9,10 @@ function DisplayImage({ pokeName }) {
     );
     const responseJson = await response.json();
     //   setName(JSON.stringify(responseJson.sprites.front_default));
+    console.log(responseJson);
     return responseJson.sprites.front_default;
+
+    // return responseJson.results[0].sprites.front_default;
   }
 
   useEffect(() => {
@@ -22,7 +25,6 @@ function DisplayImage({ pokeName }) {
   }, [pokeName]);
 
   return <img src={pokeUrl} alt="" />;
-  //   return <p>{pokeUrl}</p>;
 }
 
 export default DisplayImage;
