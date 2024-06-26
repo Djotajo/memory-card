@@ -1,9 +1,11 @@
 import DisplayCard from "./displayCard";
 
-function DisplayDeck({ array }) {
+function DisplayDeck({ array, shuffleDeck }) {
   let list;
   array
-    ? (list = array.map((item) => <DisplayCard pokeID={item} key={item} />))
+    ? (list = array.map((item) => (
+        <DisplayCard pokeID={item} key={item} shuffleDeck={shuffleDeck} />
+      )))
     : null;
 
   return <>{list}</>;

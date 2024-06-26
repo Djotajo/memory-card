@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import populateDeck from "./populateDeck";
+import shuffleDeck from "./shuffleDeck";
 import DisplayDeck from "./displayDeck";
 
 function App() {
@@ -18,12 +19,17 @@ function App() {
     maintainDeck();
   }, [deckSize]);
 
+  function handleCardClick() {
+    setCurrentDeck([...shuffleDeck(currentDeck)]);
+    console.log(currentDeck);
+  }
+
   return (
     <>
       <p>{currentScore}</p>
       <p>{highscore}</p>
       <div className="cards">
-        <DisplayDeck array={currentDeck} />
+        <DisplayDeck array={currentDeck} shuffleDeck={handleCardClick} />
       </div>
     </>
   );
