@@ -1,6 +1,12 @@
 import { useEffect, useState } from "react";
 
-function DisplayCard({ pokeID, shuffleDeck }) {
+function DisplayCard({
+  pokeID,
+  shuffleDeck,
+  updatePrevCards,
+  prevCards,
+  setPrevCards,
+}) {
   const [pokeName, setPokeName] = useState("");
   const [pokeUrl, setPokeUrl] = useState("");
 
@@ -12,9 +18,11 @@ function DisplayCard({ pokeID, shuffleDeck }) {
     return responseJson;
   }
 
-  function handleDeck(event) {
+  function handleCardClick(event) {
     event.preventDefault;
+    let item = event.target.alt;
     shuffleDeck();
+    updatePrevCards(prevCards, setPrevCards, item);
   }
 
   useEffect(() => {
@@ -30,7 +38,7 @@ function DisplayCard({ pokeID, shuffleDeck }) {
   return (
     <>
       <div className="card">
-        <img src={pokeUrl} alt={pokeName} onClick={handleDeck} />
+        <img src={pokeUrl} alt={pokeName} onClick={handleCardClick} />
         <p>{pokeName}</p>
       </div>
     </>

@@ -19,9 +19,22 @@ function App() {
     maintainDeck();
   }, [deckSize]);
 
+  useEffect(() => {
+    function updateScore() {
+      setCurrentScore(prevCards.length);
+    }
+
+    updateScore();
+  }, [prevCards.length]);
+
+  function updatePrevCards(prevCards, setPrevCards, newItem) {
+    if (!prevCards.includes(newItem)) {
+      setPrevCards([...prevCards, newItem]);
+    }
+  }
+
   function handleCardClick() {
     setCurrentDeck([...shuffleDeck(currentDeck)]);
-    console.log(currentDeck);
   }
 
   return (
@@ -29,7 +42,13 @@ function App() {
       <p>{currentScore}</p>
       <p>{highscore}</p>
       <div className="cards">
-        <DisplayDeck array={currentDeck} shuffleDeck={handleCardClick} />
+        <DisplayDeck
+          array={currentDeck}
+          shuffleDeck={handleCardClick}
+          updatePrevCards={updatePrevCards}
+          prevCards={prevCards}
+          setPrevCards={setPrevCards}
+        />
       </div>
     </>
   );
