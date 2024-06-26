@@ -49,10 +49,23 @@ function App() {
     setCurrentDeck([...shuffleDeck(currentDeck)]);
   }
 
+  function clearData() {
+    setCurrentScore(0);
+    setPrevCards([]);
+  }
+
+  function changeDeckSize(size) {
+    setDeckSize(size);
+    clearData();
+  }
+
   return (
     <>
       <p>Score: {currentScore}</p>
       <p>Highscore: {highscore}</p>
+      <button onClick={() => changeDeckSize(5)}>Easy</button>
+      <button onClick={() => changeDeckSize(10)}>Medium</button>
+      <button onClick={() => changeDeckSize(20)}>Hard</button>
       <div className="cards">
         <DisplayDeck
           array={currentDeck}
