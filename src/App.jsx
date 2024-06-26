@@ -30,8 +30,20 @@ function App() {
   function updatePrevCards(prevCards, setPrevCards, newItem) {
     if (!prevCards.includes(newItem)) {
       setPrevCards([...prevCards, newItem]);
+    } else {
+      setPrevCards([]);
     }
   }
+
+  useEffect(() => {
+    function updateHighscore() {
+      if (currentScore > highscore) {
+        setHighscore(currentScore);
+      }
+    }
+
+    updateHighscore();
+  }, [currentScore, highscore]);
 
   function handleCardClick() {
     setCurrentDeck([...shuffleDeck(currentDeck)]);
@@ -39,8 +51,8 @@ function App() {
 
   return (
     <>
-      <p>{currentScore}</p>
-      <p>{highscore}</p>
+      <p>Score: {currentScore}</p>
+      <p>Highscore: {highscore}</p>
       <div className="cards">
         <DisplayDeck
           array={currentDeck}
