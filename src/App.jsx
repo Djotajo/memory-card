@@ -6,7 +6,7 @@ import DisplayDeck from "./displayDeck";
 function App() {
   const [currentScore, setCurrentScore] = useState(0);
   const [highscore, setHighscore] = useState(0);
-  const [deckSize, setDeckSize] = useState(15);
+  const [deckSize, setDeckSize] = useState(18);
   const [currentDeck, setCurrentDeck] = useState(null);
   const [prevCards, setPrevCards] = useState([]);
   console.log(currentDeck);
@@ -63,9 +63,9 @@ function App() {
     <>
       <p>Score: {currentScore}</p>
       <p>Highscore: {highscore}</p>
-      <button onClick={() => changeDeckSize(5)}>Easy</button>
-      <button onClick={() => changeDeckSize(10)}>Medium</button>
-      <button onClick={() => changeDeckSize(20)}>Hard</button>
+      <button onClick={() => changeDeckSize(6)}>Easy</button>
+      <button onClick={() => changeDeckSize(12)}>Medium</button>
+      <button onClick={() => changeDeckSize(18)}>Hard</button>
       <div className="cards">
         <DisplayDeck
           array={currentDeck}

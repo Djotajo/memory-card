@@ -29,7 +29,7 @@ function DisplayCard({
     async function fetchPokeUrl() {
       const pokeData = await getData(pokeID);
       setPokeUrl(pokeData.sprites.front_default);
-      setPokeName(pokeData.name);
+      setPokeName(pokeData.name.toUpperCase());
     }
 
     fetchPokeUrl();
@@ -38,8 +38,15 @@ function DisplayCard({
   return (
     <>
       <div className="card">
-        <img src={pokeUrl} alt={pokeName} onClick={handleCardClick} />
-        <p>{pokeName}</p>
+        <img
+          src={pokeUrl}
+          alt={pokeName}
+          onClick={handleCardClick}
+          className="cardImg"
+        />
+        <div className="cardName">
+          <p>{pokeName}</p>
+        </div>
       </div>
     </>
   );
