@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import populateDeck from "./populateDeck";
 import shuffleDeck from "./shuffleDeck";
 import DisplayDeck from "./displayDeck";
+import PlayerWins from "./playerWins";
 
 function App() {
   const [currentScore, setCurrentScore] = useState(0);
@@ -61,20 +62,42 @@ function App() {
 
   return (
     <>
-      <p>Score: {currentScore}</p>
-      <p>Highscore: {highscore}</p>
-      <button onClick={() => changeDeckSize(6)}>Easy</button>
-      <button onClick={() => changeDeckSize(12)}>Medium</button>
-      <button onClick={() => changeDeckSize(18)}>Hard</button>
-      <div className="cards">
-        <DisplayDeck
-          array={currentDeck}
-          shuffleDeck={handleCardClick}
-          updatePrevCards={updatePrevCards}
-          prevCards={prevCards}
-          setPrevCards={setPrevCards}
-        />
+      <div className="header">
+        {" "}
+        <div>
+          <h2>Score: {currentScore}</h2>
+        </div>
+        <div>
+          <h2>Difficulty</h2>
+        </div>
+        <div>
+          <h2>Highscore: {highscore}</h2>
+        </div>
       </div>
+      <div className="difficultyButtons">
+        <button onClick={() => changeDeckSize(6)}>
+          <img src="./src/assets/easy.png" alt="" />{" "}
+        </button>
+        <button onClick={() => changeDeckSize(12)}>
+          <img src="./src/assets/normal.png" alt="" />
+        </button>
+        <button onClick={() => changeDeckSize(18)}>
+          <img src="./src/assets/hard.png" alt="" />
+        </button>
+      </div>
+      {currentScore === deckSize ? (
+        <PlayerWins />
+      ) : (
+        <div className="cards">
+          <DisplayDeck
+            array={currentDeck}
+            shuffleDeck={handleCardClick}
+            updatePrevCards={updatePrevCards}
+            prevCards={prevCards}
+            setPrevCards={setPrevCards}
+          />
+        </div>
+      )}
     </>
   );
 }
