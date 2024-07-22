@@ -14,33 +14,55 @@
   background-size: cover;
 }
 
-.cards {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  align-items: center;
-  justify-items: center;
-  width: fit-content;
-  gap: 1em;
-  margin: 0 auto;
-  margin-top: 1em;
-}
+@media screen and (min-width: 1001px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+    justify-items: center;
+    width: fit-content;
+    gap: 1em;
+    margin: 0 auto;
+    margin-top: 1em;
+  }
 
-.card {
-  display: grid;
-  grid-template-rows: 3fr 1fr;
-  justify-content: center;
-  align-content: center;
-  /* border: 1px solid black; */
-  height: 200px;
-  max-width: fit-content;
-  padding: 1em;
-  background: linear-gradient(to top right, #f5f5dc, #d3d3d3);
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* border-radius: 5px; */
-}
+  .card {
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    justify-content: center;
+    align-content: center;
+    /* border: 1px solid black; */
+    height: 200px;
+    max-width: fit-content;
+    padding: 1em;
+    background: linear-gradient(to top right, #f5f5dc, #d3d3d3);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* border-radius: 5px; */
+  }
 
+  .cardImg {
+    max-width: 100%;
+    width: 100%;
+    /* height: 100%; */
+    height: 100%;
+  }
+
+  .cardName {
+    margin: 0;
+
+    text-align: center;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cardName p {
+    margin: 0;
+  }
+}
 /* .card img {
   max-width: 100%;
   height: auto;
@@ -49,27 +71,6 @@
 .card p {
   margin: 0;
 } */
-
-.cardImg {
-  max-width: 100%;
-  width: 100%;
-  /* height: 100%; */
-  height: 100%;
-}
-
-.cardName {
-  margin: 0;
-
-  text-align: center;
-  font-weight: 800;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.cardName p {
-  margin: 0;
-}
 
 @keyframes rotateCard {
   0% {
@@ -121,5 +122,97 @@
   }
   100% {
     transform: translate(0px);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    /* width: fit-content;
+    gap: 1em;
+    margin: 0 auto;
+    margin-top: 1em; */
+  }
+
+  .card {
+    /* display: grid;
+    grid-template-rows: 3fr 1fr;
+    justify-content: center;
+    align-content: center;
+    border: 1px solid black;
+    height: 100px;
+    max-width: fit-content;
+    padding: 1em; */
+    width: 100%;
+    background: linear-gradient(to top right, #f5f5dc, #d3d3d3);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+
+  .cardImg {
+    /* max-width: 100%;
+    width: 100%;
+    height: 100%; */
+  }
+
+  .cardName {
+    /* margin: 0;
+
+    text-align: center;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    /* gap: 1em;
+    margin: 0 auto;
+    margin-top: 1em; */
+  }
+
+  .card {
+    /* display: grid;
+    grid-template-rows: 3fr 1fr;
+    justify-content: center;
+    align-content: center;
+    border: 1px solid black;
+    height: 100px;
+    max-width: fit-content;
+    padding: 1em; */
+    width: 100%;
+    background: linear-gradient(to top right, #f5f5dc, #d3d3d3);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+
+  .cardImg {
+    /* max-width: 100%;
+    width: 100%;
+    height: 100%; */
+  }
+
+  .cardName {
+    /* margin: 0;
+    text-align: center;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
   }
 }
