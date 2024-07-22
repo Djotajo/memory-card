@@ -76,13 +76,22 @@ function App() {
       </div>
       <div className="difficultyButtons">
         <button onClick={() => changeDeckSize(6)}>
-          <img src="./src/assets/easy.png" alt="" />{" "}
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png"
+            alt=""
+          />{" "}
         </button>
         <button onClick={() => changeDeckSize(12)}>
-          <img src="./src/assets/normal.png" alt="" />
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/5.png"
+            alt=""
+          />
         </button>
         <button onClick={() => changeDeckSize(18)}>
-          <img src="./src/assets/hard.png" alt="" />
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/6.png"
+            alt=""
+          />
         </button>
       </div>
       {currentScore === deckSize ? (
