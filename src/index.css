@@ -45,7 +45,7 @@
   }
 
   .cardName {
-    text-shadow: 1px 0px 0px black;
+    text-shadow: -0.06ex 0 0 currentColor, 0.06ex 0 0 currentColor;
     display: flex;
     justify-content: center;
     align-items: center;
