@@ -67,13 +67,8 @@ function DisplayCard({
 
   return (
     <>
-      <div className="card">
-        <img
-          src={pokeUrl}
-          alt={pokeName}
-          onClick={handleCardClick}
-          className="cardImg"
-        />
+      <div className="card" onClick={handleCardClick}>
+        <img src={pokeUrl} alt={pokeName} className="cardImg" />
         <div className="cardName">
           <p>{pokeName}</p>
         </div>
