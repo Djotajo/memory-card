@@ -81,8 +81,8 @@ html {
     width: 80%;
     min-width: 1000px;
     max-width: 1200px;
-    min-height: 45vh;
-    max-height: 50vh;
+    min-height: 600px;
+    max-height: 800px;
 
     justify-content: center;
     gap: 1em;
