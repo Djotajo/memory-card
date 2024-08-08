@@ -67,7 +67,7 @@ function App() {
         <div>
           <h2>Score: {currentScore}</h2>
         </div>
-        <div>
+        <div id="difficultyDiv">
           <h2>Difficulty</h2>
         </div>
         <div>
