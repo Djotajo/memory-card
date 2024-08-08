@@ -202,6 +202,13 @@ body {
     flex: 1;
   }
 
+  .difficultyButtons img {
+    width: 100%; /* Ensures the image takes up the full width of the button */
+    max-width: 100%; /* Prevents the image from exceeding the button's width */
+    height: auto; /* Maintains the image's aspect ratio */
+    display: block; /* Removes any unwanted spaces (like inline-block spacing) */
+  }
+
   .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
